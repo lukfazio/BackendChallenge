@@ -6,8 +6,34 @@ O projeto foi criado para resolver o problema proposto pelo [backend-challenge](
 ## Tecnologia
 Para a criação do projeto utilizei o VisualStudio 2019, criando um ASP.NET Core Web API na versão 5.0 do .Net Core.
 
+## Como Executar?
+Para executar a API sem utilizar o modo de depuração do Visual Studio, pode ser utilizado diretamente a API publicada na pasta **Publicado** através dos seguintes passos:
+1. Execute o executavel da solução publicada no caminho **BackendChallenge/Publicado/BackendChallenge.API.exe**
+2. A janela do prompt será exibida com o caminho no qual a API está sendo executada, como abaixo:
+```
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+```
+3. Acesso a API pelo Navegador ou Postman, como no link de exemplo abaixo, passando a string a ser validade como parâmetro no link:
+```
+https://localhost:{Porta}/api/Senha/{Senha_A_Ser_Verificada}
+
+Ex:
+
+https://localhost:5001/api/Senha/AbTp9!fok
+
+```
+4. A API irá retorna **true** caso a senha seja válida ou **false** caso seja inválida.
+5. Pressione 'Ctrl+C' no Prompt para encerrar a execução da API.
+
 ## Estratégia
-Aproveitando a facilidade que a versão 5.0 do .Net Core nos fornece de criar a estrutura da API já com a implementação do Swagger como pagina inicial da aplicação (que optei por manter devida a facilidade que o mesmo nos fornece para testar e documentar os Controllers e Actions), realizei a criação da Controller **SenhaController** responsável por receber a solicitação da validação da senha, através da HttpAction GET no método *GetIsSenhaValida*.
+Aproveitando a facilidade que a versão 5.0 do .Net Core nos fornece de criar a estrutura da API já com a implementação do Swagger como página inicial da aplicação em depuração (que optei por manter devida a facilidade que o mesmo nos fornece para testar e documentar os Controllers e Actions), realizei a criação da Controller **SenhaController** responsável por receber a solicitação da validação da senha, através da HttpAction GET no método *GetIsSenhaValida*.
 
 Como toda a estrutura de validação poderia ser reaproveitada por diferentes Controllers e outras peças da aplicação, optei por externalizar toda a lógica de validação da senha em uma classe ajudante (helper), chamada **ValidadorSenhaHelper**. Essa poderia ser responsável por validar os senhas com vários tipos de definições, logo optei por deixar a mesma o mais customizável possível, deixando todos os requisitos de desafio como parâmetros que devem ser fornecidos no construtor da classe. 
 Dessa forma, ao utilizar a classe Helper, o Controller referente ao Challenge pode ser preenchido com os parâmetros do mesmo, sem que isso ficasse *hardcoded* no fonte do Helper:
