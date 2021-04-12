@@ -30,8 +30,10 @@ info: Microsoft.Hosting.Lifetime[0]
 https://localhost:5001/api/Senha/{Senha_A_Ser_Verificada}
 
 Ex:
-
+http://localhost:5000/api/Senha/AbTp9!fok
+ou
 https://localhost:5001/api/Senha/AbTp9!fok
+
 
 ```
 4. A API irá retorna **true** caso a senha seja válida ou **false** caso seja inválida.
