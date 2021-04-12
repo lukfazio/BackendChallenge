@@ -8,6 +8,11 @@ Para a criação do projeto utilizei o VisualStudio 2019, criando um ASP.NET Cor
 
 ## Como Executar?
 Para executar a API sem utilizar o modo de depuração do Visual Studio, pode ser utilizado diretamente a API publicada na pasta **Publicado** através dos seguintes passos:
+```
+Atenção: A aplicação está configurada para executar nas portas 5000 (http) e 5001 (https)!
+Caso estas portas estejam em uso, pode ocorrer algum erro ao executar a mesma!
+```
+
 1. Execute o executavel da solução publicada no caminho **BackendChallenge/Publicado/BackendChallenge.API.exe**
 2. A janela do prompt será exibida com o caminho no qual a API está sendo executada, como abaixo:
 ```
@@ -22,7 +27,7 @@ info: Microsoft.Hosting.Lifetime[0]
 ```
 3. Acesso a API pelo Navegador ou Postman, como no link de exemplo abaixo, passando a string a ser validade como parâmetro no link:
 ```
-https://localhost:{Porta}/api/Senha/{Senha_A_Ser_Verificada}
+https://localhost:5001/api/Senha/{Senha_A_Ser_Verificada}
 
 Ex:
 
