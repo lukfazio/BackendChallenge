@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BackendChallenge.API.Helpers;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,7 +32,7 @@ namespace BackendChallenge.API.Controllers
         /// <param name="senha_">Senha a ser avaliada</param>
         /// <returns>True = Válida | False = Inválida</returns>
         [HttpGet("{senha_}")]
-        public ActionResult<bool> GetSenhaValida(string senha_)
+        public ActionResult<bool> GetIsSenhaValida(string senha_)
         {
             bool isValid = _helper.Validar(senha_);
 

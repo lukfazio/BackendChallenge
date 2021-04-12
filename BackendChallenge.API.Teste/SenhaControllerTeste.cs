@@ -13,7 +13,7 @@ namespace BackendChallenge.API.Teste
             var senhaTestada = "AbTp9!fok";
             var controller = new SenhaController();
 
-            var resultado = controller.GetSenhaValida(senhaTestada);
+            var resultado = controller.GetIsSenhaValida(senhaTestada);
 
             Assert.AreEqual(resultadoEsperado, resultado.Value);
 

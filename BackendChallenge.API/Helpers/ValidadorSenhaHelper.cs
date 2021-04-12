@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace BackendChallenge.API.Controllers
+namespace BackendChallenge.API.Helpers
 {
     public class ValidadorSenhaHelper
     {

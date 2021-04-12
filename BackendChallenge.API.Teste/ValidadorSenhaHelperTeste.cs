@@ -1,4 +1,4 @@
-using BackendChallenge.API.Controllers;
+using BackendChallenge.API.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BackendChallenge.API.Teste
